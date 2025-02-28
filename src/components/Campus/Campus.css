@@ -1,0 +1,62 @@
+.campus{
+    margin: 80px auto;
+    width: 90%;
+    text-align: center;
+}
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Adds spacing between images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin-bottom: 40px;
+}
+
+.gallery img {
+    width: calc(33.33% - 10px); /* Adjusts size dynamically */
+    max-width: 300px; /* Prevents excessive enlargement */
+    height: 200px; /* Ensures uniform height */
+    object-fit: cover; /* Crops images to fit without distortion */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+        height: 180px; /* Adjust height */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: 100%; /* One image per row on mobile */
+        height: auto; /* Auto height for better scaling */
+    }
+}
+
+.see-more-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #212EA0, #4A90E2); /* Gradient effect */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Space from gallery */
+}
+
+.see-more-btn:hover {
+    background: linear-gradient(135deg, #4A90E2, #212EA0); /* Reverse gradient */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.see-more-btn:active {
+    transform: scale(0.98); /* Subtle press effect */
+}
